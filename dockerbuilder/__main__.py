@@ -29,7 +29,7 @@ parser.add_argument('--imagename',help=F"Name of docker image to create. If not 
 parser.add_argument('--version',help=F"Version to tag the resulting Docker image with. If not specified, defaults to '{version}'")
 parser.add_argument('--dockerfile',help=F"Path to the Dockerfile to use for building. If not specified, defaults to '{dockerfile}'")
 parser.add_argument('--context',help=F"Path to the context to use when building. If not specified, defaults to '{context}'")
-parser.add_argument('--dev',help="Creates a \"dev\" Docker image (image will be tagged with 'dev', image will be run in non-daemon mode)",action="store_true")
+parser.add_argument('--dev',help="Creates a \"dev\" Docker image (image will be tagged with ':dev', image will be run immediately after being built)",action="store_true")
 parser.add_argument('--dev_args',help=F"Arguments to pass to Docker when running in dev mode. Defaults to '{dev_args}'")
 parser.add_argument('--delete',help="If a docker image with the same tag already exists, delete it",action="store_true")
 parser.add_argument('--latest',help="Tag this image with 'latest'",action="store_true")

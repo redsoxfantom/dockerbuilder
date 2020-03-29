@@ -21,7 +21,7 @@ Path to the Dockerfile to use for building. If not specified, defaults to '/curr
 Path to the context to use when building. If not specified, defaults to '/current/working/directory'
 
 `--dev`  
-Creates a "dev" Docker image (image will be tagged with `:dev`, image will run immediately after being build). Note that passing `--dev` causes the `--latest` and `--tags` parameters to be ignored 
+Creates a "dev" Docker image (image will be tagged with `:dev`, image will run immediately after being built). Note that passing `--dev` causes the `--latest` and `--tags` parameters to be ignored 
 
 `--dev_args DEV_ARGS`  
 Arguments to pass to Docker when running in dev mode. Defaults to "`-i -t --rm --network host --name <imagename>`"
