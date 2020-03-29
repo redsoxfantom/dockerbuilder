@@ -24,7 +24,7 @@ tags = []
 imagename = os.path.basename(os.getcwd())
 dev_args = F"-i -t --rm --network host --name {imagename}"
 
-parser = argparse.ArgumentParser(description="Build docker image")
+parser = argparse.ArgumentParser(description="Build docker image",prog="python -m dockerbuilder")
 parser.add_argument('--imagename',help=F"Name of docker image to create. If not specified, defaults to '{imagename}'")
 parser.add_argument('--version',help=F"Version to tag the resulting Docker image with. If not specified, defaults to '{version}'")
 parser.add_argument('--dockerfile',help=F"Path to the Dockerfile to use for building. If not specified, defaults to '{dockerfile}'")
