@@ -36,4 +36,8 @@ def buildimage(context,dockerfile,imagename,should_delete,tags,dev_mode,dev_args
         runcmd.extend(dev_args.split(" "))
         runcmd.append(F"{imagename}:dev")
         print(F"Running docker image ({' '.join(runcmd)})")
-        subprocess.run(runcmd)
+        print("Container logs will be output below.\n"\
+             F"Note that pressing 'ctrl-c' is not sufficient to kill the running container. You will need to run 'docker kill {imagename}'")
+        docker = subprocess.call(runcmd)
+            
+        

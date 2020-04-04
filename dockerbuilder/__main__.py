@@ -22,7 +22,7 @@ should_delete = False
 dev_mode = False
 tags = []
 imagename = os.path.basename(os.getcwd())
-dev_args = F"-i -t --rm --network host --name {imagename}"
+dev_args = F"--rm --network host --name {imagename}"
 
 parser = argparse.ArgumentParser(description="Build docker image",prog="python -m dockerbuilder")
 parser.add_argument('--imagename',help=F"Name of docker image to create. If not specified, defaults to '{imagename}'")
