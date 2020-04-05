@@ -8,7 +8,7 @@ Build:
     stage: Build
     script:
         - apt-get update
-        - apt-get install -y python3.7 python-pip virtualenv
+        - apt-get install -y python3.7 python3-pip virtualenv
         - virtualenv -p /usr/bin/python3 venv
         - venv/bin/pip install .
 
