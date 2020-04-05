@@ -1,0 +1,17 @@
+stages:
+    - build
+    - test
+
+build:
+    tags:
+        - linux
+    stage: build
+    script:
+        - echo "In Build"
+
+test:
+    tags:
+        - linux
+    stage: test
+    script:
+        - echo "In Test"
