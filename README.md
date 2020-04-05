@@ -24,7 +24,10 @@ Path to the context to use when building. If not specified, defaults to '/curren
 Creates a "dev" Docker image (image will be tagged with `:dev`, image will run immediately after being built). Note that passing `--dev` causes the `--latest` and `--tags` parameters to be ignored 
 
 `--dev_args DEV_ARGS`  
-Arguments to pass to Docker when running in dev mode. Defaults to "`-i -t --rm --network host --name <imagename>`"
+Arguments to pass to Docker when running in dev mode. Defaults to "`--rm --network host --name <imagename>`"
+
+`--dev_args_append DEV_ARGS_APPEND`
+Arguments to append to the default dev_args ('`--rm --network host --name <imagename>`'). You can use this if you want to add additional arguments to the default 'docker run' dev args and not have to rewrite the default args
 
 `--delete`  
 If a docker image with the same tag already exists, delete it before building

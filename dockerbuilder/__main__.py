@@ -31,6 +31,7 @@ parser.add_argument('--dockerfile',help=F"Path to the Dockerfile to use for buil
 parser.add_argument('--context',help=F"Path to the context to use when building. If not specified, defaults to '{context}'")
 parser.add_argument('--dev',help="Creates a \"dev\" Docker image (image will be tagged with ':dev', image will be run immediately after being built)",action="store_true")
 parser.add_argument('--dev_args',help=F"Arguments to pass to Docker when running in dev mode. Defaults to '{dev_args}'")
+parser.add_argument('--dev_args_append',help=F"Arguments to append to the default dev_args ('{dev_args}')")
 parser.add_argument('--delete',help="If a docker image with the same tag already exists, delete it",action="store_true")
 parser.add_argument('--latest',help="Tag this image with 'latest'",action="store_true")
 parser.add_argument('--tags',help="Comma separated list of tags to apply to the built image")
@@ -51,6 +52,8 @@ if args.dev:
     dev_mode = True
 if args.dev_args:
     dev_args = args.dev_args
+if args.dev_args_append:
+    dev_args = dev_args + " " + args.dev_args_append
 if args.delete:
     should_delete = True
 if args.latest:
