@@ -9,4 +9,5 @@ buildandtest:
         - linux
     stage: Build and Test
     script:
-        - pip install .
+        - virtualenv venv
+        - venv/bin/pip install .
