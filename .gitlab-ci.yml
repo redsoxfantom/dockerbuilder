@@ -1,17 +1,12 @@
+default:
+    image: 'python:3.7.7-slim'
+
 stages:
-    - build
-    - test
+    - Build and Test
 
-build:
+buildandtest:
     tags:
         - linux
-    stage: build
+    stage: Build and Test
     script:
-        - echo "In Build"
-
-test:
-    tags:
-        - linux
-    stage: test
-    script:
-        - echo "In Test"
+        - pip install .
