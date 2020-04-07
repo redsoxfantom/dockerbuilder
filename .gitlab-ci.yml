@@ -1,20 +1,11 @@
 stages:
-    - Build
-    - Test
+    - build
 
 Build:
+    image: docker:19.0.3
     tags:
         - linux
-    stage: Build
+    stage: build
     script:
-        - apt-get update
-        - apt-get install -y python3.7 python3-pip virtualenv
-        - virtualenv -p /usr/bin/python3 venv
-        - venv/bin/pip install .
-
-Test:
-    tags:
-        - linux
-    stage: Test
-    script:
-        - echo "Hello World"
+        - VERSION=$(cat VERSION)
+        - docker build -t dockerbuilder:$VERSION .
